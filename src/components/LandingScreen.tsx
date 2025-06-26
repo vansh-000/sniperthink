@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MessageCircle, 
-  Phone, 
-  Target, 
-  Zap, 
-  Play, 
+import {
+  MessageCircle,
+  Phone,
+  Target,
+  Zap,
+  Play,
   Send,
   Wifi,
   Battery,
@@ -18,7 +18,6 @@ import {
 const LandingScreen: React.FC = () => {
   const [typingDots, setTypingDots] = useState<number>(0);
 
-  // Typing animation effect
   useEffect(() => {
     const interval = setInterval(() => {
       setTypingDots(prev => (prev + 1) % 4);
@@ -33,9 +32,8 @@ const LandingScreen: React.FC = () => {
       {[0, 1, 2].map((i) => (
         <div
           key={i}
-          className={`w-2 h-2 bg-gray-400 rounded-full transition-all duration-300 ${
-            i < typingDots ? 'animate-bounce' : ''
-          }`}
+          className={`w-2 h-2 bg-gray-400 rounded-full transition-all duration-300 ${i < typingDots ? 'animate-bounce' : ''
+            }`}
           style={{ animationDelay: `${i * 100}ms` }}
         />
       ))}
@@ -54,40 +52,34 @@ const LandingScreen: React.FC = () => {
       {/* Hero Section */}
       <main className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
             {/* Left Content */}
             <div className="space-y-8">
               {/* Badge */}
               <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full">
-                <Zap className="w-4 h-4 text-emerald-600" />
-                <span className="text-sm font-semibold text-emerald-700">AI-Powered Customer Engagement</span>
+                <Zap className="w-4 h-4 text-accent-orange" />
+                <span className="text-sm font-semibold text-primary">AI-Powered Customer Engagement</span>
               </div>
 
               {/* Title */}
-              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-                <span className="text-gray-900">The </span>
-                <span className="bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
-                  Future
-                </span>
-                <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
-                  {' '}of{' '}
-                </span>
-                <br />
-                <span className="text-gray-900">Customer</span>
-                <br />
-                <span className="text-gray-900">Interaction</span>
+              <h1 className="text-4xl lg:text-6xl font-black leading-tight text-center">
+                <div className="bg-gradient-to-r from-teal-600 via-teal-500 to-accent-orange bg-clip-text text-transparent">
+                  The Future of
+                </div>
+                <div className="text-gray-900">
+                  Customer Interaction
+                </div>
               </h1>
 
               {/* Description */}
               <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                Experience next-generation AI agents that chat and call with human-like intelligence. 
-                Boost productivity by <span className="font-bold text-emerald-600">300%</span> and 
-                reduce manual effort by <span className="font-bold text-emerald-600">85%</span>.
+                Experience next-generation AI agents that chat and call with human-like intelligence.
+                Boost productivity by 300% and reduce manual effort by 85%.
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3">
+                <button className="group bg-gradient-to-r from-primary to-teal-400 hover:from-teal-400 hover:to-primary text-white px-8 py-4 rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3">
                   <MessageCircle className="w-5 h-5" />
                   <span>Chat Agent</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -103,13 +95,13 @@ const LandingScreen: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href="#trial"
-                  className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-center"
+                  className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-orange-600 hover:to-amber-500 text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-center"
                 >
                   Start Free Trial
                 </a>
                 <a
                   href="#demo"
-                  className="group bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-200 hover:border-gray-300 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3"
+                  className="group bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-200 hover:border-gray-300 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 border-primary"
                 >
                   <Play className="w-5 h-5" />
                   <span>Watch Demo</span>
@@ -136,14 +128,14 @@ const LandingScreen: React.FC = () => {
                     {/* Chat Header */}
                     <div className="bg-white px-6 py-4 flex items-center space-x-3 border-b border-gray-100 shadow-sm">
                       <div className="relative">
-                        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-br from-primary to-teal-400 rounded-full flex items-center justify-center">
                           <Target className="w-5 h-5 text-white" />
                         </div>
-                        <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-teal-500 rounded-full border-2 border-white"></div>
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900">SniperThink AI</h3>
-                        <p className="text-xs text-green-600 font-medium">Online</p>
+                        <p className="text-xs text-primary font-medium">Online</p>
                       </div>
                       <MoreHorizontal className="w-5 h-5 text-gray-400" />
                     </div>
@@ -160,7 +152,7 @@ const LandingScreen: React.FC = () => {
 
                       {/* Sent Message */}
                       <div className="flex justify-end">
-                        <div className="bg-gradient-to-r from-emerald-500 to-green-600 px-4 py-3 rounded-2xl rounded-br-md shadow-sm max-w-xs">
+                        <div className="bg-gradient-to-r from-primary to-teal-400 px-4 py-3 rounded-2xl rounded-br-md shadow-sm max-w-xs">
                           <p className="text-sm text-white">I need help with Pricing</p>
                           <p className="text-xs text-emerald-100 mt-1 text-right">9:42 AM</p>
                         </div>
@@ -191,7 +183,7 @@ const LandingScreen: React.FC = () => {
                             aria-label="Type a message"
                           />
                         </div>
-                        <button className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
+                        <button className="w-10 h-10 bg-gradient-to-r from-primary to-teal-400 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105">
                           <Send className="w-4 h-4 text-white" />
                         </button>
                       </div>
