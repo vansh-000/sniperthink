@@ -37,11 +37,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="relative py-12 px-12 overflow-hidden font-popins text-primary">
-      <h2 className="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
-      
-      <div className="overflow-x-auto p-4">
-        <div className="flex gap-6 min-w-max px-2">
+    <div className="relative bg-gradient-to-r from-[#1A6262] to-[#91C499] py-12 md:px-12 px-2 overflow-hidden font-popins text-white">
+       <h2 className="text-3xl md:text-4xl text-center font-bold text-white mb-6">
+            What Our Users Say
+          </h2>
+          <p className="text-xl text-white/90 text-center max-w-3xl mx-auto">
+            Real testimonials from real businesses using SniperThink
+          </p>
+      <div className="overflow-x-auto pt-8 p-4">
+        <div className="flex gap-6 min-w-max md:px-2">
           {testimonials.map((t, idx) => (
             <a
               href={t.reviewLink}

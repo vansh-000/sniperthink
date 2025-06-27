@@ -1,5 +1,7 @@
 import AnalyticsDashboard from './components/Analytics'
 import FeatureCarousel from './components/Carousel'
+import ChatVsCall from './components/ChatVsCall'
+import CustomerBase from './components/Customers'
 import Features from './components/Features'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -13,10 +15,12 @@ function App() {
     <div className='font-popins'>
       <Header />
       <Hero />
-      <AnalyticsDashboard/>
-      <Results/>
       <Features/>
+      <CustomerBase/>
+      <Results/>
       <FeatureCarousel/>
+      <ChatVsCall/>
+      <AnalyticsDashboard/>
       <Testimonials/>
       <Footer/>
     </div>

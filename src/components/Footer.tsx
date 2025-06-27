@@ -2,7 +2,7 @@ import { Mail, Phone, Building, MessageCircle } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-gray-300 px-8 py-16">
+        <footer className="bg-gray-900 text-gray-300 px-8 pt-16 pb-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Left Section - Logo and Description */}
@@ -92,7 +92,7 @@ export default function Footer() {
                 {/* Bottom Section - Copyright and Privacy */}
                 <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-sm">
-                        © 2024 SniperThink. All rights reserved.
+                        © 2025 SniperThink. All rights reserved.
                     </p>
                     <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors text-sm">
                         Privacy Policy

@@ -60,7 +60,7 @@ const Features = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100  py-16 px-4 sm:px-6 lg:px-8">
             <style>{`
         .perspective-1000 {
           perspective: 1000px;
@@ -120,7 +120,7 @@ const Features = () => {
                     ))}
                 </div>
                 <div className="relative">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-8 lg:gap-12">
                         {capabilities.map((capability, index) => (
                             <div
                                 key={index}

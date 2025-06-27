@@ -298,7 +298,7 @@ const FeatureCarousel = () => {
     const currentFeature = features[currentSlide];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 p-4">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 pt-16 p-4">
             <style>{`
         @keyframes float {
           0%, 100% { transform: translate(-50%, -50%) translateY(0px) scale(1); }
@@ -314,29 +314,19 @@ const FeatureCarousel = () => {
       `}</style>
 
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent mb-4">
-                        AI-Powered Business Solutions
-                    </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Transform your business operations with intelligent automation and seamless integrations
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Powerful Capabilities, Seamless Experience</h1>
+                    <p className="text-gray-600 text-xl max-w-2xl mx-auto">
+                       Discover how our AI agents handle the heavy lifting for your business
                     </p>
                 </div>
-
-                {/* Main Carousel Card */}
                 <div className="bg-white rounded-3xl shadow-2xl overflow-hidden relative backdrop-blur-sm border border-white/20">
                     <div className="relative h-[600px]">
-                        {/* Background gradient overlay */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${currentFeature.bgGradient} opacity-30 transition-all duration-700`}></div>
-
-                        {/* Content Grid */}
                         <div className="relative grid grid-cols-1 lg:grid-cols-2 h-full">
-                            {/* Left Content Panel */}
                             <div className="p-12 flex flex-col justify-center relative z-10">
                                 <div className="feature-enter">
-                                    {/* Category Badge */}
-                                    <div className="inline-flex items-center space-x-2 mb-6">
+                                    <div className="sm:inline-flex hidden items-center space-x-2 mb-6">
                                         <div className={`w-12 h-12 bg-gradient-to-br ${currentFeature.gradient} rounded-xl flex items-center justify-center text-white shadow-lg`}>
                                             {currentFeature.icon}
                                         </div>
@@ -344,10 +334,10 @@ const FeatureCarousel = () => {
                                             {currentFeature.category}
                                         </span>
                                     </div>
-                                    <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                                         {currentFeature.title}
                                     </h2>
-                                    <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                                    <p className="text-gray-600 md:text-lg mb-8 leading-relaxed">
                                         {currentFeature.description}
                                     </p>
                                     <div className="space-y-4 mb-10">
@@ -372,7 +362,7 @@ const FeatureCarousel = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div className={`bg-gradient-to-br ${currentFeature.bgGradient} p-12 flex items-center justify-center relative overflow-hidden`}>
+                            <div className={`bg-gradient-to-br  ${currentFeature.bgGradient} p-12 items-center justify-center relative overflow-hidden hidden screens:flex lg:flex`}>
                                 <div className="absolute inset-0 opacity-10">
                                     <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full"></div>
                                     <div className="absolute bottom-10 left-10 w-24 h-24 bg-white rounded-full"></div>
@@ -385,57 +375,52 @@ const FeatureCarousel = () => {
                     </div>
 
                 </div>
-                    <div className="backdrop-blur-sm border-t  p-6">
-                        <div className="flex items-center justify-between">
-                            {/* Navigation Buttons */}
-                            <div className="flex items-center space-x-3">
+                <div className="backdrop-blur-sm border-t  p-6">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                            <button
+                                onClick={prevSlide}
+                                disabled={isTransitioning}
+                                className="md:w-12 md:h-12 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-100"
+                            >
+                                <ChevronLeft className="w-6 h-6 text-gray-700" />
+                            </button>
+                            <button
+                                onClick={nextSlide}
+                                disabled={isTransitioning}
+                                className="md:w-12 md:h-12 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-100"
+                            >
+                                <ChevronRight className="w-6 h-6 text-gray-700" />
+                            </button>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors mr-4"
+                            >
+                                {isPlaying ?
+                                    <Pause className="w-5 h-5 text-gray-700" /> :
+                                    <Play className="w-5 h-5 text-gray-700" />
+                                }
+                            </button>
+
+                            {features.map((_, index) => (
                                 <button
-                                    onClick={prevSlide}
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
                                     disabled={isTransitioning}
-                                    className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-100"
-                                >
-                                    <ChevronLeft className="w-6 h-6 text-gray-700" />
-                                </button>
-                                <button
-                                    onClick={nextSlide}
-                                    disabled={isTransitioning}
-                                    className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed border border-gray-100"
-                                >
-                                    <ChevronRight className="w-6 h-6 text-gray-700" />
-                                </button>
-                            </div>
-
-                            {/* Center: Slide Indicators */}
-                            <div className="flex items-center space-x-3">
-                                <button
-                                    onClick={() => setIsPlaying(!isPlaying)}
-                                    className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors mr-4"
-                                >
-                                    {isPlaying ?
-                                        <Pause className="w-5 h-5 text-gray-700" /> :
-                                        <Play className="w-5 h-5 text-gray-700" />
-                                    }
-                                </button>
-
-                                {features.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => goToSlide(index)}
-                                        disabled={isTransitioning}
-                                        className={`transition-all duration-300 rounded-full ${index === currentSlide
-                                            ? `w-8 h-4 bg-gradient-to-r ${currentFeature.gradient}`
-                                            : 'w-4 h-4 bg-gray-300 hover:bg-gray-400'
-                                            } disabled:cursor-not-allowed`}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Progress Indicator */}
-                            <div className="text-sm text-gray-500 font-medium">
-                                {currentSlide + 1} / {features.length}
-                            </div>
+                                    className={`transition-all hidden lg:flex duration-300 rounded-full ${index === currentSlide
+                                        ? `w-4 h-4 bg-gradient-to-r ${currentFeature.gradient}`
+                                        : 'w-4 h-4 bg-gray-300 hover:bg-gray-400'
+                                        } disabled:cursor-not-allowed`}
+                                />
+                            ))}
+                        </div>
+                        <div className="text-sm text-gray-500 font-medium">
+                            {currentSlide + 1} / {features.length}
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     );

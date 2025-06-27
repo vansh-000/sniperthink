@@ -9,14 +9,13 @@ interface MetricItemProps {
 
 const MetricItem: React.FC<MetricItemProps> = ({ icon, value, label }) => (
   <div className="flex flex-col items-center text-center">
-    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
+    <div className="md:w-16 mx-2 md:h-16 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-sm">
       {icon}
     </div>
-
-    <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+    <div className="text-lg mx-2 lg:text-3xl md:text-4xl flex items-center justify-center font-bold text-white mb-2">
       {value}
     </div>
-    <div className="text-white/90 text-xl font-bold max-w-60 leading-tight">
+    <div className="text-white/90 text-lg lg:text-xl flex items-center justify-center font-bold max-w-60 leading-tight">
       {label}
     </div>
   </div>
@@ -61,7 +60,7 @@ const Results: React.FC = () => {
             Real metrics from real businesses using SniperThink
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {metrics.map((metric, index) => (
             <MetricItem
               key={index}

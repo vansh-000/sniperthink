@@ -15,9 +15,10 @@ export default {
           green: "#91C499",
         },
       },
+      screens: {
+        'custom': '1045px',
+      },
     },
   },
   plugins: [],
 };
-
-
