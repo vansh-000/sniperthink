@@ -1,4 +1,5 @@
 import AnalyticsDashboard from './components/Analytics'
+import FeatureCarousel from './components/Carousel'
 import Features from './components/Features'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -15,6 +16,7 @@ function App() {
       <AnalyticsDashboard/>
       <Results/>
       <Features/>
+      <FeatureCarousel/>
       <Testimonials/>
       <Footer/>
     </div>

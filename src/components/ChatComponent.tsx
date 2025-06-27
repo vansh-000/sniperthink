@@ -21,10 +21,13 @@ export default function ChatBot() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-
     const time = getTime();
-    const userMessage = { type: 'user', text: input.trim(), time };
-    const botMessage = {
+    const userMessage: { type: 'user'; text: string; time: string } = {
+      type: 'user',
+      text: input.trim(),
+      time
+    };
+    const botMessage: { type: 'bot'; text: string; time: string } = {
       type: 'bot',
       text: responses[Math.floor(Math.random() * responses.length)],
       time
@@ -33,6 +36,7 @@ export default function ChatBot() {
     setMessages(prev => [...prev, userMessage, botMessage]);
     setInput('');
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
@@ -68,8 +72,8 @@ export default function ChatBot() {
               <div
                 key={idx}
                 className={`w-fit max-w-md rounded-xl px-4 py-2 shadow text-sm break-words ${msg.type === 'user'
-                    ? 'ml-auto bg-gradient-to-br from-primary to-teal-500 text-white text-right'
-                    : 'bg-white text-gray-800'
+                  ? 'ml-auto bg-gradient-to-br from-primary to-teal-500 text-white text-right'
+                  : 'bg-white text-gray-800'
                   }`}
               >
                 <p>{msg.text}</p>

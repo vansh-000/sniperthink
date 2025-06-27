@@ -39,7 +39,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, value, icon, color, bgCo
   </div>
 );
 
-const LeadSegmentationItem: React.FC<LeadItem> = ({ type, count, color, bgColor }) => (
+const LeadSegmentationItem: React.FC<LeadItem> = ({ type, count, color }) => (
   <div className="flex items-center justify-between py-3">
     <div className="flex items-center gap-3">
       <div className={`w-3 h-3 rounded-full ${color}`}></div>
