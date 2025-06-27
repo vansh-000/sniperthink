@@ -175,7 +175,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-amber-200/30 to-orange-300/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
             <div className="space-y-8">
               <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full">
@@ -228,7 +228,7 @@ const Hero: React.FC = () => {
                 </a>
                 <a
                   href="#demo"
-                  className="group bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-200 hover:border-gray-300 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 border-primary"
+                  className="group bg-white hover:bg-gray-50 text-gray-700 border-2 hover:border-gray-300 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center space-x-3 border-primary"
                 >
                   <Play className="w-5 h-5" />
                   <span>Watch Demo</span>
