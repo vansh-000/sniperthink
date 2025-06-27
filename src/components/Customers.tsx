@@ -61,7 +61,7 @@ const CustomerBase = () => {
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-transparent mb-6">
                         Built for Teams That Value{' '}
-                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-primary to-teal-300 bg-clip-text text-transparent">
                             Speed & Precision
                         </span>
                     </h2>

@@ -46,8 +46,9 @@ const ChatVsCall = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-20 max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
-                        Chat or Call —  You Choose How Your AI Works
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight tracking-tight">
+                        Chat or Call — {''}
+                        <span className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#1A6262] via-[#b2e8ba] to-[#ffb938] bg-clip-text text-transparent">You Choose How Your AI Works</span>
                     </h2>
                     <p className="mt-4 text-lg text-slate-600">
                         Compare experiences and pick the interaction mode that fits your users best.
