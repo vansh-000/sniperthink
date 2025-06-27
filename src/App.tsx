@@ -1,13 +1,13 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
-import LandingScreen from './components/LandingScreen'
+import Hero from './components/Hero'
 
 function App() {
 
   return (
     <>
       <Header />
-      <LandingScreen />
+      <Hero />
       <Footer/>
     </>
   )
