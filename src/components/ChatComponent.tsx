@@ -40,23 +40,18 @@ export default function ChatBot() {
         {/* Header */}
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-green-400 to-teal-500 p-3 rounded-full">
+            <div className="bg-gradient-to-br from-primary to-teal-500 p-3 rounded-full">
               <MessageCircle className="text-white" size={20} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-teal-800">SniperThink Chat AI</h1>
+              <h1 className="text-xl font-bold text-teal-700">SniperThink Chat AI</h1>
               <p className="text-green-500 text-sm">● Online & Ready</p>
             </div>
           </div>
           <div className="flex gap-2">
-            <div className="bg-green-100 text-green-700 font-semibold text-sm px-4 py-1 rounded-full">
-              Text AI
+            <div className="bg-green-100 text-primary font-semibold text-sm px-4 py-1 rounded-full">
+              Live Demo
             </div>
-            {messages.length > 0 && (
-              <div className="bg-gray-100 text-gray-700 font-semibold text-sm px-4 py-1 rounded-full">
-                Responding
-              </div>
-            )}
           </div>
         </div>
 
@@ -73,7 +68,7 @@ export default function ChatBot() {
               <div
                 key={idx}
                 className={`w-fit max-w-md rounded-xl px-4 py-2 shadow text-sm break-words ${msg.type === 'user'
-                    ? 'ml-auto bg-gradient-to-br from-teal-500 to-green-400 text-white text-right'
+                    ? 'ml-auto bg-gradient-to-br from-primary to-teal-500 text-white text-right'
                     : 'bg-white text-gray-800'
                   }`}
               >
@@ -94,14 +89,14 @@ export default function ChatBot() {
           <input
             type="text"
             placeholder="Type your message here ..."
-            className="flex-1 border border-teal-500 rounded-full px-4 py-2 outline-none focus:ring-2 focus:ring-teal-300 text-sm"
+            className="flex-1 border-2 border-teal-800 rounded-full px-4 py-2 outline-none focus:ring-2 focus:ring-teal-600 text-sm"
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && handleSend()}
           />
           <button
             onClick={handleSend}
-            className="p-3 rounded-full bg-gradient-to-br from-teal-500 to-green-400 text-white hover:opacity-90"
+            className="p-3 rounded-full bg-gradient-to-br from-primary to-teal-500 text-white hover:opacity-90"
           >
             <Send size={16} />
           </button>

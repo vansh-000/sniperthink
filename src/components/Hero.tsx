@@ -14,6 +14,8 @@ import {
   MicOff,
   VolumeX
 } from 'lucide-react';
+import ChatBot from './ChatComponent';
+import Call from './CallComponent';
 
 const Hero: React.FC = () => {
   const [typingDots, setTypingDots] = useState<number>(0);
@@ -180,13 +182,14 @@ const Hero: React.FC = () => {
                 <Zap className="w-4 h-4 text-accent-orange" />
                 <span className="text-sm font-semibold text-primary">AI-Powered Customer Engagement</span>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-black leading-tight text-center">
-                <div className="bg-gradient-to-r from-teal-600 via-teal-500 to-accent-orange bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-[#1A6262] via-[#91C499] to-[#E1A940] bg-clip-text text-transparent animate-pulse">
                   The Future of
-                </div>
-                <div className="text-gray-900">
+                </span>
+                <br/>
+                <span className="text-gray-900">
                   Customer Interaction
-                </div>
+                </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                 Experience next-generation AI agents that chat and call with human-like intelligence.
@@ -255,6 +258,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </main>
+      {activeMode === 'chat' ? <ChatBot /> : <Call/>}
     </div>
   );
 };
